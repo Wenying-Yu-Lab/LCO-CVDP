@@ -24,8 +24,20 @@ def parse_arguments():
     args = parser.parse_args()
     return args
 
+def check_args(args) -> Tuple(bool, str, str):
+    if args.folds <= 0:
+        return (False, "--folds", "")
+    if args.n_clusters <= 0:
+        return (False, "--n-clusters", "")
+    if not (0<args.external_test_ratio<1):
+        return (False, "--external_test_ratio", "")
+    return (True, "", "")
+
 def main():
     args = parse_arguments()
+    check_res = check_args(args)
+    if not check_res[0]:
+        raise RuntimeError(f"Invalid argument: {check_res[1]}. {check_res[2]}")
     data_raw = data_cvdp.from_csv(args.data_path)
     structures = cluster.molecules(data_raw, args.structure_column_header)
     structures.calc_similarity()

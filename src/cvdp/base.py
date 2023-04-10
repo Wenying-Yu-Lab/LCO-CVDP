@@ -1,7 +1,7 @@
 import os
 import sys
 import csv
-from typing import List, Dict, Callable
+from typing import List, Dict, Tuple, Callable
 import chardet
 from copy import deepcopy
 

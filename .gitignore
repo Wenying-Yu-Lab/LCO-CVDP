@@ -1,5 +1,6 @@
 # Local Files
 /stuff/
+/*.pdf
 
 # Test Files
 test.py

@@ -1,3 +1,13 @@
+# Local Files
+/stuff/
+/*.pdf
+
+# Test Files
+test.py
+/test/
+/model_data_out/
+/.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

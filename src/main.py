@@ -24,7 +24,7 @@ def parse_arguments():
     args = parser.parse_args()
     return args
 
-def check_args(args) -> Tuple(bool, str, str):
+def check_args(args) -> Tuple[bool, str, str]:
     if args.folds <= 0:
         return (False, "--folds", "")
     if args.n_clusters <= 0:
